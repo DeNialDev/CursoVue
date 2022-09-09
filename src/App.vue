@@ -23,7 +23,7 @@ const classCounter = computed(() => {
 
 const searchArray = computed(() => {
 	const exist = arrayNumbers.value.find((number) => number === counter.value)
-	if(exist === 0){
+	if (exist === 0) {
 		return true
 	}
 	return exist ? true : false
@@ -34,16 +34,23 @@ const addToArray = () => {
 </script>
 
 <template>
-	<h2 :class="classCounter">{{counter}}</h2>
-	<button @click="increment">Increment</button>
-	<button @click="decrement">Decrement</button>
-	<button @click="reset">Reset</button>
-	<button @click="addToArray" :disabled="searchArray">Add</button>
-	<ul>
-		<li v-for="(number, index) in arrayNumbers" :key="index">
-			{{number}}
-		</li>
-	</ul>
+	<div class="container text-center mt-5	">
+
+		<h2 :class="classCounter">{{counter}}</h2>
+		<div class="btn-group">
+			<button @click="increment" class="btn btn-success">Increment</button>
+			<button @click="decrement" class="btn btn-danger">Decrement</button>
+			<button @click="reset" class="btn btn-secondary">Reset</button>
+			<button @click="addToArray" :disabled="searchArray" class="btn btn-primary ">Add</button>
+		</div>
+
+		<ul class="list-group mt-3">
+			<li class="list-group-item" v-for="(number, index) in arrayNumbers" :key="index">
+				{{number}}
+			</li>
+		</ul>
+	</div>
+
 </template>
 
 <style>
