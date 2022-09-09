@@ -1,15 +1,16 @@
 <script setup>
 import BlogPost from './components/BlogPost.vue'
 import {ref} from 'vue'
-const posts = ref([
-	{ id: 1, title: "Post 01", body: "Descrión del post 01" },
-	{ id: 2, title: "Post 02", body: "Descrión del post 02" },
-	{ id: 3, title: "Post 03" },
-]);
+const posts = ref([]);
 const favorite = ref('')
 const setFavorite = (title) =>{
 	favorite.value = title
 }
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(res => res.json())
+.then((data) => posts.value = data)
+
 </script>
 
 <template>
