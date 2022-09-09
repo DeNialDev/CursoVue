@@ -1,36 +1,11 @@
 <script setup>
 
-const Fruits = [
-	{
-		name: "Fresa",
-		price: "$1.00",
-		description: "Una fresa",
-		stock: 0,
-	},
-	{
-		name: "Melon",
-		price: "$1.00",
-		description: "Una Melon",
-		stock: 30,
-	},
-
-]
-
-
+const  handleClick = () => console.log('You click me')
 
 </script>
 
 <template>
-	<ul>
-		<template v-for="item in Fruits" :key="item.name">
-			<li v-if="item.stock > 5">
-			
-				{{item.name}} - {{item.price}}
-			
-		</li>
-		</template>
-		
-	</ul>
+	<button @click="handleClick">click me</button>
 </template>
 
 <style>
