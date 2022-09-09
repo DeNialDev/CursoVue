@@ -1,11 +1,16 @@
 <script setup>
-
-const  handleClick = () => console.log('You click me')
+import {ref} from "vue"
+const increment = () => {
+	console.log("Aumentar")
+	counter.value++
+}
+const counter = ref(0)
 
 </script>
 
 <template>
-	<button @click="handleClick">click me</button>
+	<h2>{{counter}}</h2>
+	<button @click="increment">Increment</button>
 </template>
 
 <style>
