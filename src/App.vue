@@ -1,18 +1,36 @@
 <script setup>
 
-const Fruits = {
+const Fruits = [
+	{
 		name: "Fresa",
 		price: "$1.00",
-		description: "Una fresa"
-	}
+		description: "Una fresa",
+		stock: 0,
+	},
+	{
+		name: "Melon",
+		price: "$1.00",
+		description: "Una Melon",
+		stock: 30,
+	},
+
+]
+
+
+
 </script>
 
 <template>
 	<ul>
-		<li v-for="(value, prop) in Fruits" :key="value">
-			{{prop}} - {{value}}
+		<template v-for="item in Fruits" :key="item.name">
+			<li v-if="item.stock > 5">
+			
+				{{item.name}} - {{item.price}}
+			
 		</li>
-	</ul> 
+		</template>
+		
+	</ul>
 </template>
 
 <style>
