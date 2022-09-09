@@ -1,15 +1,18 @@
 <script setup>
 
-const arrayFruits = ["Apple", "Orange", "Watermelon", "Grapes"]
+const Fruits = {
+		name: "Fresa",
+		price: "$1.00",
+		description: "Una fresa"
+	}
 </script>
 
 <template>
 	<ul>
-		<li v-for="(fruit, index) in arrayFruits"
-		:key="index">
-			{{index}} - {{fruit}}
+		<li v-for="(value, prop) in Fruits" :key="value">
+			{{prop}} - {{value}}
 		</li>
-	</ul>
+	</ul> 
 </template>
 
 <style>
